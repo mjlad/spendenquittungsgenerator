@@ -6,9 +6,9 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/soffice --headless -env:UserInstallation=file:///tmp/libeoffice-uno \
+ExecStart=/usr/bin/soffice -env:UserInstallation=file:///tmp/libeoffice-uno \
   --accept=socket,host=127.0.0.1,port=2002;urp; --display :5.0 \
-  --pidfile=/var/run/user/%U/sofiice.pid --nologo --nodefault --nofirststartwizard
+  --pidfile=/var/run/user/%U/sofiice.pid --nologo --nodefault
 RestartSec=5
 PIDFile=/var/run/user/%U/sofiice.pid
 PrivateTmp=yes
